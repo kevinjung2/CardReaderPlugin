@@ -33,6 +33,7 @@
         <framework src="mediaplayer.framework"  />
         <framework src="audiotoolbox.framework" />
         <framework src="foundation.framework" />
+        <framework src="CoreBluetooth.framework" />
         <framework src="externalaccessory.framework" />
     </platform>
 

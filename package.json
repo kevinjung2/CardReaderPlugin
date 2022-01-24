@@ -1,0 +1,19 @@
+{
+  "name": "cardreaderplugin",
+  "version": "1.0.0",
+  "description": "Cordova plugin for communicating with MagTek eDynamo card readers",
+  "main": "magtek_udynamo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinjung2/CardReaderPlugin.git"
+  },
+  "author": "Kevin Jung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinjung2/CardReaderPlugin/issues"
+  },
+  "homepage": "https://github.com/kevinjung2/CardReaderPlugin#readme"
+}

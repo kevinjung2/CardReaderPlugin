@@ -182,5 +182,26 @@
 
         cordova.exec(success, fail_handler, 'com.egood.magtek-udynamo', 'setDeviceType', [device_type]);
     };
+
+    //scanning methods
+
+    MagTek.startScanningForPeripherals = function(callback, error) {
+        var success = function(status) { callback(status) };
+        var fail_handler = error || fail;
+
+        cordova.exec(success, fail_handler, 'com.egood.magtek-udynamo', 'startScanningForPeripherals', []);
+    };
+    MagTek.stopScanningForPeripherals = function(callback, error) {
+        var success = function(status) { callback(status) };
+        var fail_handler = error || fail;
+
+        cordova.exec(success, fail_handler, 'com.egood.magtek-udynamo', 'stopScanningForPeripherals', []);
+    };
+    MagTek.getDiscoveredPeripherals = function(callback, error) {
+        var success = function(status) { callback(status) };
+        var fail_handler = error || fail;
+
+        cordova.exec(success, fail_handler, 'com.egood.magtek-udynamo', 'getDiscoveredPeripherals', []);
+    };
  
     module.exports = MagTek;
