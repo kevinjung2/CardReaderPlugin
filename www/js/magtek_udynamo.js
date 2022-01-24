@@ -22,11 +22,11 @@
         cordova.exec(success, fail_handler, 'com.egood.magtek-udynamo', 'isDeviceOpened', []);
     };
 
-    MagTek.openDevice = function(callback, error) {
+    MagTek.openDevice = function(mac, callback, error) {
         var success = function(status) { callback(status); }
         var fail_handler = error || fail;;
 
-        cordova.exec(success, fail_handler, 'com.egood.magtek-udynamo', 'openDevice', []);
+        cordova.exec(success, fail_handler, 'com.egood.magtek-udynamo', 'openDevice', [mac]);
     };
     MagTek.closeDevice = function(callback, error) {
         var success = function(status) { callback(status); };
