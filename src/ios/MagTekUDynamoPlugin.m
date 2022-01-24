@@ -119,11 +119,37 @@
         else {
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Reader already open."];
         }
+    }
 	else {
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"MagTek Plugin was not properly initialized."];
 	}
     
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (NSMutableDictionary*)peripheralToDictionary:(CBPeripheral *)peripheral {
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[NSString stringWithFormat:@"%@", [peripheral identifier]] forKey:@"identifier"];
+    [dict setObject:[NSString stringWithFormat:@"%@" , [peripheral name]] forKey:@"name"];
+    // [dict setObject:[NSString stringWithFormat:@"%ld", [peripheral state]] forKey:@"state"];
+    switch ([peripheral state]) {
+        case CBPeripheralStateDisconnected:
+            [dict setObject:@"disconnected" forKey:@"state"];
+            break;
+        case CBPeripheralStateConnecting:
+            [dict setObject:@"connecting" forKey:@"state"];
+            break;
+        case CBPeripheralStateConnected:
+            [dict setObject:@"connected" forKey:@"state"];
+            break;
+        case CBPeripheralStateDisconnecting:
+            [dict setObject:@"disconnecting" forKey:@"state"];
+            break;
+        default:
+            [dict setObject:@"disconnected" forKey:@"state"];
+            
+    }
+    return dict;
 }
 
 - (void)closeDevice:(CDVInvokedUrlCommand*)command
