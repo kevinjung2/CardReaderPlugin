@@ -99,7 +99,7 @@
 	if(self.mMagTek != nil) {
         if(![self mDeviceOpened]){
             [self.mMagTek setDeviceType:(MAGTEKEDYNAMO)];
-            [self.mMagTek setAdress:self.mMac];
+            [self.mMagTek setAddress:self.mMac];
 
             self.mDeviceOpened = [self.mMagTek openDevice];
             if([self.mMagTek isDeviceConnected]) {
