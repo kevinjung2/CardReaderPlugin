@@ -3,7 +3,7 @@
 #import <Cordova/CDV.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
-#import <MTSCRA/MTSCRA.h>
+#import "MTSCRA.h"
 
 @interface MagTekUDynamoPlugin : CDVPlugin
 

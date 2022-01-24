@@ -123,7 +123,7 @@
 
         cordova.exec(success, fail_handler, 'com.egood.magtek-udynamo', 'setDeviceProtocolString', [protocol_string]);
     };
-    MagTek.listenForEvents = function(callback, events, error) {
+    MagTek.listenForEvents = function(events, callback, error) {
         var success = function(status) { callback(status); };
         var fail_handler = error || fail;
 
