@@ -36,6 +36,7 @@
 - (void)getDiscoveredPeripherals: (CDVInvokedUrlCommand*) command {
     [self.commandDelegate runInBackground:^{
         NSMutableArray *peripherals = [[NSMutableArray alloc] init];
+        NSLog(@"return from getDiscoveredPeripherals %@", [self.mMagTek getDiscoveredPeripherals]);
         for (CBPeripheral *peripheral in [self.mMagTek getDiscoveredPeripherals]){
             [peripherals addObject:[self peripheralToDictionary:peripheral]];
         }
