@@ -7,6 +7,7 @@
 @property (strong, nonatomic) MTSCRA* mMagTek;
 @property bool mDeviceConnected;
 @property bool mDeviceOpened;
+@property bool scanning;
 @property NSString* mTrackDataListenerCallbackId;
 @property NSString* mMac;
 
@@ -47,14 +48,20 @@
 - (void)startScanningForPeripherals: (CDVInvokedUrlCommand *) command {
     [self.commandDelegate runInBackground:^{
         [self.mMagTek startScanningForPeripherals];
-        
+        self.scanning = true;
+
+        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:self.scanning];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
 }
 
 - (void)stopScanningForPeripherals: (CDVInvokedUrlCommand *) command {
     [self.commandDelegate runInBackground:^{        
         [self.mMagTek stopScanningForPeripherals];
+        self.scanning = false;
 
+        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:self.scanning];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
 }
 
