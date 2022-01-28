@@ -1,0 +1,19 @@
+{
+  "name": "com.egood.magtek-udynamo",
+  "version": "0.0.5",
+  "description": "Allow using Magtek iDynamo with cordova",
+  "main": "magtek_udynamo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinjung2/CardReaderPlugin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinjung2/CardReaderPlugin/issues"
+  },
+  "homepage": "https://github.com/kevinjung2/CardReaderPlugin#readme"
+}
